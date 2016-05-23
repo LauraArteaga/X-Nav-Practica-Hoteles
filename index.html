@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html>
+   <head>
+     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1">
+     <title>Aloha-T</title>
+
+     <link rel="stylesheet" href="jquery-ui/jquery-ui.min.css">
+     <link href="bootstrap/css/bootstrap.min.css" rel='stylesheet' type='text/css'/>
+     <link href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" rel="stylesheet">
+     <link href="aloha.css" rel="stylesheet">
+     <script type="text/javascript" src="jquery-ui/external/jquery/jquery.js"></script>
+     <script type="text/javascript" src="jquery-ui/jquery-ui.min.js"></script>
+     <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+     <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
+     <script src="bootstrap/js/bootstrap.min.js"></script>
+     <script type="text/javascript" src="aloha.js"></script>
+     <script type="text/javascript" src="slider.js"></script>
+     <script src="github.js"></script>
+   </head>
+   <body>
+     <div id="banner">
+       <img src="jquery-ui/images/banner.jpg">
+     </div>
+     <div id="tabs">
+      <ul>
+        <li>
+          <a href="#tabs-1">Aloha-T</a>
+        </li>
+        <li>
+          <a href="#tabs-2">Colecciones</a>
+        </li>
+        <li>
+          <a href="#tabs-3">Aloha-2</a>
+        </li>
+      </ul>
+      <div id="tabs-1">
+        <div class="row">
+          <div class="col-md-6">
+            <div id="map"></div>
+          </div>
+          <div class="col-md-3">
+            <div class="update">Buscar Alojamiento!</div>
+            <div class="hotels"><h3>Selecciona un Hotel!</h3><div class="hotels-list"></div></div>
+          </div>
+          <div class="col-md-3">
+            <div class="collection">
+              <h3></h3>
+              <div class="ui-widget-content">
+                <ol>
+                  <p class="placeholder">Añade tus hoteles!</p>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-md-6">
+              <div class="hotel-description"></div>
+          </div>
+          <div class="col-md-6">
+            <div id="myCarousel1" class="carousel slide" data-ride="carousel">
+          		<ol class="carousel-indicators"></ol>
+          		<div class="carousel-inner" role="listbox"></div>
+          		<a class="left carousel-control" href="#myCarousel1" role="button" data-slide="prev">
+          		  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          		  <span class="sr-only">Previous</span>
+          		</a>
+          		<a class="right carousel-control" href="#myCarousel1" role="button" data-slide="next">
+          		  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          		  <span class="sr-only">Next</span>
+          		</a>
+          	</div>
+          </div>
+        </div>
+
+      </div>
+      <div id="tabs-2">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="update">Buscar Alojamiento!</div>
+            <div class="hotels" ><h3>Selecciona un Hotel!</h3><div class="hotels-list"></div></div>
+          </div>
+          <div class="col-md-4">
+            <ol id="selectable"></ol>
+            <div class="collection">
+              <h3></h3>
+              <div class="ui-widget-content">
+                <ol>
+                  <p class="placeholder"></p>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="new-collection">
+              <h4>Añade una nueva coleccion!!</h4>
+                <input type="text" id="new-col" placeholder="nombre">
+                <button id="create">Crear</button>
+            </div>
+            <div class="github-form-1">
+              <h4>Carga tus colecciones de Github!!</h4>
+              <div id="load-form">
+                <input type="text" id="url" placeholder="archivo.json">
+                <button id="load">Cargar</button>
+              </div>
+            </div>
+            <div class="github-form-2">
+              <h4>Guarda tus colecciones en Github!!</h4>
+              <div id="save-form">
+                <input type="text" id="git-repo" placeholder="repositorio">
+                <input type="text" id="file" placeholder="archivo.json">
+                <input type="text" id="token" placeholder="token"><br>
+                <button id="save">Guardar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="tabs-3">
+        <div class="update">Buscar Alojamiento!</div>
+        <div id="google">
+          <input type="text" id="google-user" placeholder="usuario">
+          <button id="user">Iniciar Sension</button>
+        </div>
+        <div id="user-session" align="center">
+              <h4 id="user-name"></h4>
+              <span id="user-img"></span>
+            <div id="following"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+              <div class="hotel-description"></div>
+          </div>
+          <div class="col-md-6">
+            <div id="myCarousel2" class="carousel slide" data-ride="carousel">
+          		<ol class="carousel-indicators"></ol>
+          		<div class="carousel-inner" role="listbox"></div>
+          		<a class="left carousel-control" href="#myCarousel2" role="button" data-slide="prev">
+          		  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          		  <span class="sr-only">Previous</span>
+          		</a>
+          		<a class="right carousel-control" href="#myCarousel2" role="button" data-slide="next">
+          		  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          		  <span class="sr-only">Next</span>
+          		</a>
+          	</div>
+          </div>
+        </div>
+        <div align="center">
+          <button id='follow'>Seguir</button>
+          <div id="followers"></div>
+        </div>
+      </div>
+    </div>
+   </body>
+</html>
